@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Infrastructure.Services
 {
@@ -15,6 +16,20 @@ namespace Infrastructure.Services
             }
 
             return inputList;
+        }
+
+        public string ParseSingleRowInputToString(string fileLocation)
+        {
+            var lines = File.ReadLines(fileLocation).ToList();
+
+            return lines.First();
+        }
+
+        public List<int> ParseSingleRowInputToNumberList(string fileLocation)
+        {
+            var lines = File.ReadLines(fileLocation).ToList();
+
+            return lines.First().Split(',').Select(o => int.Parse(o)).ToList();
         }
 
         public IList<long> ParseInputToNumber(string fileLocation)
