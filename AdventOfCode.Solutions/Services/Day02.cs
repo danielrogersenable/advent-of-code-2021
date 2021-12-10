@@ -5,18 +5,11 @@ using Infrastructure.Services;
 
 namespace AdventOfCode.Solutions.Services
 {
-    public class Day02 : IDayService
+    public class Day02 : BaseDayService
     {
-        private readonly InputParserService _inputParserService;
-
-        public Day02(InputParserService inputParserService)
+        public override long SolvePart1(bool useSample)
         {
-            _inputParserService = inputParserService;
-        }
-
-        public long SolvePart1()
-        {
-            var input = _inputParserService.ParseInputToString("Inputs/day02-1.txt");
+            var input = ParseInputToString(useSample);
 
             var movements = input
                 .Select(i => i.Split(" "))
@@ -50,9 +43,9 @@ namespace AdventOfCode.Solutions.Services
             return (horizontalPosition * verticalPosition);
         }
 
-        public long SolvePart2()
+        public override long SolvePart2(bool useSample)
         {
-            var input = _inputParserService.ParseInputToString("Inputs/day02-1.txt");
+            var input = ParseInputToString(useSample);
 
             var movements = input
                 .Select(i => i.Split(" "))

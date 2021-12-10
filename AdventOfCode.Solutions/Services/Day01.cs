@@ -7,18 +7,11 @@ using Infrastructure.Services;
 
 namespace AdventOfCode.Solutions.Services
 {
-    public class Day01 : IDayService
+    public class Day01 : BaseDayService
     {
-        private readonly InputParserService _inputParserService;
-
-        public Day01(InputParserService inputParserService)
+        public override long SolvePart1(bool useSample)
         {
-            _inputParserService = inputParserService;
-        }
-
-        public long SolvePart1()
-        {
-            var input = _inputParserService.ParseInputToNumber("Inputs/day01-1.txt");
+            var input = ParseInputToNumber(useSample);
 
             var nextInputLargerCount = 0;
 
@@ -33,9 +26,9 @@ namespace AdventOfCode.Solutions.Services
             return nextInputLargerCount;
         }
 
-        public long SolvePart2()
+        public override long SolvePart2(bool useSample)
         {
-            var input = _inputParserService.ParseInputToNumber("Inputs/day01-1.txt");
+            var input = ParseInputToNumber(useSample);
 
             var nextInputLargerCount = 0;
 

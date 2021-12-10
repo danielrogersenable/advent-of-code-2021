@@ -8,8 +8,8 @@ namespace AdventOfCode.Solutions.Services
 {
     public interface IDayService
     {
-        long SolvePart1();
+        long SolvePart1(bool useSample);
 
-        long SolvePart2();
+        long SolvePart2(bool useSample);
     }
 }

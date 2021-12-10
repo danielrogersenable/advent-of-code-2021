@@ -7,18 +7,11 @@ using Infrastructure.Services;
 
 namespace AdventOfCode.Solutions.Services
 {
-    public class Day08 : IDayService
+    public class Day08 : BaseDayService
     {
-        private readonly InputParserService _inputParserService;
-
-        public Day08(InputParserService inputParserService)
+        public override long SolvePart1(bool useSample)
         {
-            _inputParserService = inputParserService;
-        }
-
-        public long SolvePart1()
-        {
-            var input = _inputParserService.ParseInputToString("Inputs/day08-1.txt")
+            var input = ParseInputToString(useSample)
                 .Select(o => o.Split('|'))
                 .Select(o => o.Select(i => i.Split(' ')).ToList())
                 .Select(o => o[1])
@@ -33,9 +26,9 @@ namespace AdventOfCode.Solutions.Services
             return (oneCount + fourCount + sevenCount + eightCount);
         }
 
-        public long SolvePart2()
+        public override long SolvePart2(bool useSample)
         {
-            var input = _inputParserService.ParseInputToString("Inputs/day08-1.txt")
+            var input = ParseInputToString(useSample)
                 .Select(o => o.Split('|'))
                 .Select(o => o
                     .Select(i => i

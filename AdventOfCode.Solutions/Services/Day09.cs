@@ -8,18 +8,11 @@ using Infrastructure.Services;
 
 namespace AdventOfCode.Solutions.Services
 {
-    public class Day09 : IDayService
+    public class Day09 : BaseDayService
     {
-        private readonly InputParserService _inputParserService;
-
-        public Day09(InputParserService inputParserService)
+        public override long SolvePart1(bool useSample)
         {
-            _inputParserService = inputParserService;
-        }
-
-        public long SolvePart1()
-        {
-            var input = _inputParserService.ParseInputToString("Inputs/day09-1.txt")
+            var input = ParseInputToString(useSample)
                 .Select(i => i.ToCharArray().Select(i => int.Parse(i.ToString())).ToArray())
                 .ToArray();
 
@@ -42,9 +35,9 @@ namespace AdventOfCode.Solutions.Services
             return (lowPoints.Sum(l => l.Height) + lowPoints.Count());
         }
 
-        public long SolvePart2()
+        public override long SolvePart2(bool useSample)
         {
-            var input = _inputParserService.ParseInputToString("Inputs/day09-1.txt")
+            var input = ParseInputToString(useSample)
                 .Select(i => i.ToCharArray().Select(i => int.Parse(i.ToString())).ToArray())
                 .ToArray();
 

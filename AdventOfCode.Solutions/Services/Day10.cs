@@ -8,18 +8,11 @@ using Infrastructure.Services;
 
 namespace AdventOfCode.Solutions.Services
 {
-    public class Day10 : IDayService
+    public class Day10 : BaseDayService
     {
-        private readonly InputParserService _inputParserService;
-
-        public Day10(InputParserService inputParserService)
+        public override long SolvePart1(bool useSample)
         {
-            _inputParserService = inputParserService;
-        }
-
-        public long SolvePart1()
-        {
-            var input = _inputParserService.ParseInputToString("Inputs/day10-1.txt");
+            var input = ParseInputToString(useSample);
 
             var illegalScore = 0;
 
@@ -105,9 +98,9 @@ namespace AdventOfCode.Solutions.Services
             return illegalScore;
         }
 
-        public long SolvePart2()
+        public override long SolvePart2(bool useSample)
         {
-            var input = _inputParserService.ParseInputToString("Inputs/day10-1.txt");
+            var input = ParseInputToString(useSample);
             var totalScores = new List<long>();
 
             foreach (var row in input)

@@ -8,18 +8,11 @@ using Infrastructure.Services;
 
 namespace AdventOfCode.Solutions.Services
 {
-    public class Day04 : IDayService
+    public class Day04 : BaseDayService
     {
-        private readonly InputParserService _inputParserService;
-
-        public Day04(InputParserService inputParserService)
+        public override long SolvePart1(bool useSample)
         {
-            _inputParserService = inputParserService;
-        }
-
-        public long SolvePart1()
-        {
-            var input = _inputParserService.ParseInputToString("Inputs/day04-1.txt");
+            var input = ParseInputToString(useSample);
 
             var numberOrder = input[0]
                 .Split(',')
@@ -106,9 +99,9 @@ namespace AdventOfCode.Solutions.Services
             return result;
         }
 
-        public long SolvePart2()
+        public override long SolvePart2(bool useSample)
         {
-            var input = _inputParserService.ParseInputToString("Inputs/day04-1.txt");
+            var input = ParseInputToString(useSample);
 
             var numberOrder = input[0]
                 .Split(',')

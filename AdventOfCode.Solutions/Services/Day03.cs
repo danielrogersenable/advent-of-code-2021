@@ -7,22 +7,18 @@ using Infrastructure.Services;
 
 namespace AdventOfCode.Solutions.Services
 {
-    public class Day03 : IDayService
+    public class Day03 : BaseDayService
     {
-        private readonly InputParserService _inputParserService;
         private readonly BinaryService _binaryService;
 
-        public Day03(
-            InputParserService inputParserService,
-            BinaryService binaryService)
+        public Day03(BinaryService binaryService) : base()
         {
-            _inputParserService = inputParserService;
             _binaryService = binaryService;
         }
 
-        public long SolvePart1()
+        public override long SolvePart1(bool useSample)
         {
-            var input = _inputParserService.ParseInputToString("Inputs/day03-1.txt");
+            var input = ParseInputToString(useSample);
 
             long gamma = 0;
             long epsilon = 0;
@@ -54,9 +50,9 @@ namespace AdventOfCode.Solutions.Services
             return (gamma * epsilon);
         }
 
-        public long SolvePart2()
+        public override long SolvePart2(bool useSample)
         {
-            var input = _inputParserService.ParseInputToString("Inputs/day03-1.txt");
+            var input = ParseInputToString(useSample);
 
             var inputLength = input[0].Length;
 

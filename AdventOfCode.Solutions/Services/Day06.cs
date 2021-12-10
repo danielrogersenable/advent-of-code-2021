@@ -8,18 +8,11 @@ using Infrastructure.Services;
 
 namespace AdventOfCode.Solutions.Services
 {
-    public class Day06 : IDayService
+    public class Day06 : BaseDayService
     {
-        private readonly InputParserService _inputParserService;
-
-        public Day06(InputParserService inputParserService)
+        public override long SolvePart1(bool useSample)
         {
-            _inputParserService = inputParserService;
-        }
-
-        public long SolvePart1()
-        {
-            var input = _inputParserService.ParseInputToString("Inputs/day06-1.txt");
+            var input = ParseInputToString(useSample);
 
             var lanternfishAges = input[0]
                 .Split(',')
@@ -62,9 +55,9 @@ namespace AdventOfCode.Solutions.Services
             return lanternfishAges.Count();
         }
 
-        public long SolvePart2()
+        public override long SolvePart2(bool useSample)
         {
-            var input = _inputParserService.ParseInputToString("Inputs/day06-1.txt");
+            var input = ParseInputToString(useSample);
 
             var lanternfishAges = input[0]
                 .Split(',')

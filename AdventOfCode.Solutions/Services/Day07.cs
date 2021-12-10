@@ -4,18 +4,11 @@ using Infrastructure.Services;
 
 namespace AdventOfCode.Solutions.Services
 {
-    public class Day07 : IDayService
+    public class Day07 : BaseDayService
     {
-        private readonly InputParserService _inputParserService;
-
-        public Day07(InputParserService inputParserService)
+        public override long SolvePart1(bool useSample)
         {
-            _inputParserService = inputParserService;
-        }
-
-        public long SolvePart1()
-        {
-            var input = _inputParserService.ParseSingleRowInputToNumberList("Inputs/day07-1.txt")
+            var input = ParseSingleRowInputToNumberList(useSample)
                 .OrderBy(o => o)
                 .ToList();
 
@@ -33,9 +26,9 @@ namespace AdventOfCode.Solutions.Services
             return input.Select(i => Math.Abs(i - medianValue)).Sum();
         }
 
-        public long SolvePart2()
+        public override long SolvePart2(bool useSample)
         {
-            var input = _inputParserService.ParseSingleRowInputToNumberList("Inputs/day07-1.txt")
+            var input = ParseSingleRowInputToNumberList(useSample)
                 .OrderBy(o => o)
                 .ToList();
 
