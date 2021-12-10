@@ -17,7 +17,7 @@ namespace AdventOfCode.Solutions.Services
             _inputParserService = inputParserService;
         }
 
-        public string SolvePart1()
+        public long SolvePart1()
         {
             var input = _inputParserService.ParseInputToString("Inputs/day06-1.txt");
 
@@ -59,10 +59,10 @@ namespace AdventOfCode.Solutions.Services
                 dayCount++;
             }
 
-            return lanternfishAges.Count().ToString();
+            return lanternfishAges.Count();
         }
 
-        public string SolvePart2()
+        public long SolvePart2()
         {
             var input = _inputParserService.ParseInputToString("Inputs/day06-1.txt");
 
@@ -108,7 +108,7 @@ namespace AdventOfCode.Solutions.Services
                 dayCount++;
             }
 
-            return lanternfish.Sum(l => l.Count).ToString();
+            return lanternfish.Sum(l => l.Count);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace AdventOfCode.Solutions.Services
             _inputParserService = inputParserService;
         }
 
-        public string SolvePart1()
+        public long SolvePart1()
         {
             var input = _inputParserService.ParseInputToString("Inputs/day04-1.txt");
 
@@ -103,10 +103,10 @@ namespace AdventOfCode.Solutions.Services
                 }
             }
 
-            return result.ToString();
+            return result;
         }
 
-        public string SolvePart2()
+        public long SolvePart2()
         {
             var input = _inputParserService.ParseInputToString("Inputs/day04-1.txt");
 
@@ -205,7 +205,7 @@ namespace AdventOfCode.Solutions.Services
                 }
             }
 
-            return result.ToString();
+            return result;
         }
     }
 }

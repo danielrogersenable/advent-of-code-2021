@@ -34,7 +34,7 @@ namespace AdventOfCode.Solutions.Services
 
             var dayService = (IDayService)_serviceProvider.GetService(serviceType);
 
-            string result = null;
+            long result = -1;
 
             switch (partSelection)
             {

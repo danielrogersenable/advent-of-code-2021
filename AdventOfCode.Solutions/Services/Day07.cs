@@ -13,7 +13,7 @@ namespace AdventOfCode.Solutions.Services
             _inputParserService = inputParserService;
         }
 
-        public string SolvePart1()
+        public long SolvePart1()
         {
             var input = _inputParserService.ParseSingleRowInputToNumberList("Inputs/day07-1.txt")
                 .OrderBy(o => o)
@@ -30,10 +30,10 @@ namespace AdventOfCode.Solutions.Services
                 medianValue = input[(input.Count()) / 2];
             }
 
-            return input.Select(i => Math.Abs(i - medianValue)).Sum().ToString();
+            return input.Select(i => Math.Abs(i - medianValue)).Sum();
         }
 
-        public string SolvePart2()
+        public long SolvePart2()
         {
             var input = _inputParserService.ParseSingleRowInputToNumberList("Inputs/day07-1.txt")
                 .OrderBy(o => o)
@@ -60,7 +60,7 @@ namespace AdventOfCode.Solutions.Services
                 }
             }
 
-            return bestResult.ToString();
+            return bestResult;
         }
     }
 }

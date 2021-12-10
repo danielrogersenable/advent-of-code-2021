@@ -20,7 +20,7 @@ namespace AdventOfCode.Solutions.Services
             _binaryService = binaryService;
         }
 
-        public string SolvePart1()
+        public long SolvePart1()
         {
             var input = _inputParserService.ParseInputToString("Inputs/day03-1.txt");
 
@@ -51,10 +51,10 @@ namespace AdventOfCode.Solutions.Services
             Console.WriteLine("gamma: " + gamma);
             Console.WriteLine("epsilon: " + epsilon);
 
-            return (gamma * epsilon).ToString();
+            return (gamma * epsilon);
         }
 
-        public string SolvePart2()
+        public long SolvePart2()
         {
             var input = _inputParserService.ParseInputToString("Inputs/day03-1.txt");
 
@@ -117,7 +117,7 @@ namespace AdventOfCode.Solutions.Services
             Console.WriteLine("oxygen: " + oxygenValue);
             Console.WriteLine("scrubber: " + scrubberValue);
 
-            return (oxygenValue * scrubberValue).ToString();
+            return (oxygenValue * scrubberValue);
         }
     }
 }

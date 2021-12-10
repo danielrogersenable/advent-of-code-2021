@@ -17,7 +17,7 @@ namespace AdventOfCode.Solutions.Services
             _inputParserService = inputParserService;
         }
 
-        public string SolvePart1()
+        public long SolvePart1()
         {
             var input = _inputParserService.ParseInputToString("Inputs/day09-1.txt")
                 .Select(i => i.ToCharArray().Select(i => int.Parse(i.ToString())).ToArray())
@@ -39,10 +39,10 @@ namespace AdventOfCode.Solutions.Services
                     .Any())
                 .ToList();
 
-            return (lowPoints.Sum(l => l.Height) + lowPoints.Count()).ToString();
+            return (lowPoints.Sum(l => l.Height) + lowPoints.Count());
         }
 
-        public string SolvePart2()
+        public long SolvePart2()
         {
             var input = _inputParserService.ParseInputToString("Inputs/day09-1.txt")
                 .Select(i => i.ToCharArray().Select(i => int.Parse(i.ToString())).ToArray())
@@ -172,7 +172,7 @@ namespace AdventOfCode.Solutions.Services
                 .OrderByDescending(l => l.Count)
                 .ToList();
 
-            return (results[0].Count * results[1].Count * results[2].Count).ToString();
+            return (results[0].Count * results[1].Count * results[2].Count);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace AdventOfCode.Solutions.Services
             _inputParserService = inputParserService;
         }
 
-        public string SolvePart1()
+        public long SolvePart1()
         {
             var input = _inputParserService.ParseInputToString("Inputs/day08-1.txt")
                 .Select(o => o.Split('|'))
@@ -30,10 +30,10 @@ namespace AdventOfCode.Solutions.Services
             var sevenCount = input.Where(o => o.Length == 3).Count();
             var eightCount = input.Where(o => o.Length == 7).Count();
 
-            return (oneCount + fourCount + sevenCount + eightCount).ToString();
+            return (oneCount + fourCount + sevenCount + eightCount);
         }
 
-        public string SolvePart2()
+        public long SolvePart2()
         {
             var input = _inputParserService.ParseInputToString("Inputs/day08-1.txt")
                 .Select(o => o.Split('|'))
@@ -132,7 +132,7 @@ namespace AdventOfCode.Solutions.Services
                 cumulativeTotal += resultingNumber;
             }
 
-            return cumulativeTotal.ToString();
+            return cumulativeTotal;
         }
     }
 }
