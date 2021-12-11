@@ -15,7 +15,7 @@ namespace AdventOfCode.Solutions.Services
         {
             Console.WriteLine("Enter your day and part in the form day-part; e.g. 2-1 for day 2, part 1.");
             Console.WriteLine("Optionally append '-s' to use sample data - e.g. 2-1-s");
-            Console.WriteLine("Enter choice here:")
+            Console.WriteLine("Enter choice here:");
             var daySelection = Console.ReadLine();
 
             var dayAndPartSelection = daySelection.Split("-");
